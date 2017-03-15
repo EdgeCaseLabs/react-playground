@@ -1,3 +1,6 @@
+// @flow
+
+
 import React from 'react'
 
 import AltDataDemoStore from '../stores/AltDataDemoStore'
@@ -8,7 +11,7 @@ import { Modal, Button } from 'react-bootstrap'
 
 class AltDataDemo extends React.Component {
 
-    constructor(props){
+    constructor(props: any){
         super(props)
         this.state = AltDataDemoStore.getState()
         this.onChange = this.onChange.bind(this)
@@ -23,11 +26,11 @@ class AltDataDemo extends React.Component {
         AltDataDemoStore.unlisten(this.onChange)
     }
 
-    onChange(state){
+    onChange(state: any){
         this.setState(state)
     }
 
-    handleDismissClick(cart){
+    handleDismissClick(cart: any){
         AltDataDemoActions.toggleModal(cart)
     }
 
@@ -35,7 +38,7 @@ class AltDataDemo extends React.Component {
         AltDataDemoActions.toggleModal(null)
     }
 
-    handleOKClick(dismissCart, dismissComment){
+    handleOKClick(dismissCart: number, dismissComment: string){
         AltDataDemoActions.dismissCart(dismissCart, dismissComment)
     }
 
@@ -46,7 +49,7 @@ class AltDataDemo extends React.Component {
                     <td>{cart.createdDate}</td>
                     <td>{cart.firstName} {cart.lastName}</td>
                     <td>{cart.email} ({cart.emailUses} use{cart.emailUses > 1 ? "s" : ""})</td>
-                    <td><Button bsSize="xsmall" onClick={this.handleDismissClick.bind(this, cart)}>Dismiss</Button></td>
+                    <td><Button className="dismiss" bsSize="xsmall" onClick={this.handleDismissClick.bind(this, cart)}>Dismiss</Button></td>
                 </tr>
             )
         })
@@ -77,13 +80,13 @@ class AltDataDemo extends React.Component {
                             <th>Name</th>
                             <th>Email (# uses)</th>
                             <th>Action</th>
-                        </tr>                    
+                        </tr>
                     </thead>
                     <tbody>
                         {nodes}
                     </tbody>
                 </table>
-                <DismisDialog 
+                <DismisDialog
                     dismissCart={this.state.dismissCart}
                     handleCloseClick={this.handleCloseClick}
                     handleOKClick={this.handleOKClick}

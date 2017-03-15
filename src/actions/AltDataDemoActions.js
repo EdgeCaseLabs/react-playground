@@ -56,9 +56,9 @@ class AltDataDemoActions {
   }
 
   dismissCart(dismissCart, dismissComment){
-    // ajax({ 
-    //       url: '/admin/api/altdatademo/', 
-    //       data: {'userId': dismissCart.userID, 'dismissComment': dismissComment}, 
+    // ajax({
+    //       url: '/admin/api/altdatademo/',
+    //       data: {'userId': dismissCart.userID, 'dismissComment': dismissComment},
     //       type: 'POST'
     //   })
     //   .done((data) => {
@@ -68,7 +68,7 @@ class AltDataDemoActions {
     //   .fail((jqXhr, textStatus, errorThrown) => {
     //     this.dismissCartFail([jqXhr, textStatus, errorThrown])
     //   })
-    return false    
+    return false
   }
 
 

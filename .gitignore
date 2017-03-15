@@ -1,3 +1,7 @@
-bower_components
 node_modules
+bower_components
 dist
+coverage
+.nyc_output
+__debug
+*.log.*
